@@ -296,7 +296,6 @@ export default function Technologies() {
 
         <div className="tech-rows">
           <MarqueeRow items={ROW_ONE} />
-          <MarqueeRow items={ROW_TWO} reverse />
         </div>
 
       </section>
