@@ -202,6 +202,7 @@ export default function Projects() {
           grid-template-columns: repeat(3, 1fr);
           gap: 0;
           border-left: 1px solid var(--rule, #c8bfb0);
+          border-top: 1px solid var(--rule, #c8bfb0);
           margin: 0 4rem;
         }
 
