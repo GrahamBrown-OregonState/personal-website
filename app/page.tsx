@@ -1,10 +1,9 @@
-import CassetteBackground from "@/components/CassetteBackground";
+import HeroText from "@/components/HeroText";
 
 export default function Home() {
   return (
     <main>
-      <CassetteBackground />
-      {/* your other components */}
+      <HeroText />
     </main>
   );
 }
