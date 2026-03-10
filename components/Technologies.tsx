@@ -3,32 +3,37 @@
 import { useEffect, useRef, useState } from "react";
 
 // ─── EDIT THESE ───────────────────────────────────────────
-// Icon slugs from https://simpleicons.org
+// Place logo files in public/logos/ — e.g. public/logos/bash.svg
+// The "file" value is the filename without extension.
+
 const ROW_ONE = [
-  { name: "AVR Assembly",   slug: "task"},
-  { name: "Bash",           slug: "gnubash"},
-  { name: "C",              slug: "c" },
-  { name: "C++",            slug: "c++" },
-  { name: "Debian",         slug: "debian"},
-  { name: "Git",            slug: "git"},
-  { name: "Haskell",        slug: "haskell"},
-  { name: "JavaScript",     slug: "javascript"},
-  { name: "Linux",          slug: "linux" },
-  { name: "next.js",        slug: "nextdotjs"},
-  { name: "Node.js",        slug: "nodedotjs"},
-  { name: "Python",         slug: "python"},
-  { name: "Quartus",        slug: "intel"},
-  { name: "React",          slug: "react"},
-  { name: "Red Hat",        slug: "redhat"},
-  { name: "Spreadsheets",   slug: "libreofficecalc"},
-  { name: "SystemVerilog",  slug: "task"},
-  { name: "TypeScript",     slug: "typescript"},
-  { name: "Unity",          slug: "unity"},
-  { name: "Vercel",         slug: "vercel"},
+  { name: "AVR Assembly",   file: "avr-assembly"},
+  { name: "Bash",           file: "bash"},
+  { name: "C",              file: "c" },
+  { name: "C++",            file: "cpp" },
+  { name: "Debian",         file: "debian"},
+  { name: "Git",            file: "git"},
+  { name: "Haskell",        file: "haskell"},
+  { name: "JavaScript",     file: "javascript"},
+  { name: "Linux",          file: "linux" },
+  { name: "Next.js",        file: "nextjs"},
+  { name: "Node.js",        file: "nodejs"},
+  { name: "Python",         file: "python"},
+  { name: "Quartus",        file: "quartus"},
+  { name: "React",          file: "react"},
+  { name: "Red Hat",        file: "redhat"},
+  { name: "Spreadsheets",   file: "spreadsheets"},
+  { name: "SystemVerilog",  file: "systemverilog"},
+  { name: "TypeScript",     file: "typescript"},
+  { name: "Unity",          file: "unity"},
+  { name: "Vercel",         file: "vercel"},
 ];
+
+// File extension — change to "png" or "webp" if needed
+const EXT = "svg";
 // ──────────────────────────────────────────────────────────
 
-function Logo({ name, slug }: { name: string; slug: string }) {
+function Logo({ name, file }: { name: string; file: string }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -39,7 +44,7 @@ function Logo({ name, slug }: { name: string; slug: string }) {
     >
       <div className="tech-logo-inner">
         <img
-          src={`https://cdn.simpleicons.org/${slug}`}
+          src={`/logos/${file}.${EXT}`}
           alt={name}
           className="tech-logo-img"
           style={{ opacity: hovered ? 0.75 : 0.25 }}
@@ -65,7 +70,7 @@ function MarqueeRow({ items, reverse = false }: { items: typeof ROW_ONE; reverse
     <div className="marquee-wrap">
       <div className={`marquee-track ${reverse ? "marquee-rev" : ""}`}>
         {doubled.map((tech, i) => (
-          <Logo key={`${tech.slug}-${i}`} name={tech.name} slug={tech.slug} />
+          <Logo key={`${tech.file}-${i}`} name={tech.name} file={tech.file} />
         ))}
       </div>
     </div>
