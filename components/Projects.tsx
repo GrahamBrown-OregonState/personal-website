@@ -6,11 +6,11 @@ import { useEffect, useRef, useState } from "react";
 const PROJECTS = [
   {
     index: "001",
-    title: "Distributed Cache Layer",
-    category: "Infrastructure",
-    year: "2024",
+    title: "Portfolio Website",
+    category: "Front-end",
+    year: "2026",
     description: "Designed and deployed a distributed caching system across a multi-region cluster, reducing p99 latency by 40%.",
-    tags: ["Redis", "Kubernetes", "Go"],
+    tags: ["TypeScript", "React", "Next.js"],
     image: null,
   },
   {
